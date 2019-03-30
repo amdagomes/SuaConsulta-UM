@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void carregarConfiguracoesConta(View view){
-        Intent intent = new Intent(this, ContaActivity.class);
+        Intent intent = new Intent(MainActivity.this, ContaActivity.class);
         startActivity(intent);
     }
 
