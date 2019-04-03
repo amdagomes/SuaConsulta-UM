@@ -79,4 +79,16 @@ public class Medico {
 
         return Objects.hash(id, nome, CRM, telefone, especialidade, email);
     }
+
+    @Override
+    public String toString() {
+        return "Medico{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", CRM=" + CRM +
+                ", telefone='" + telefone + '\'' +
+                ", especialidade='" + especialidade + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

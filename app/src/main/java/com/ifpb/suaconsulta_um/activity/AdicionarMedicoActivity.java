@@ -76,8 +76,8 @@ public class AdicionarMedicoActivity extends AppCompatActivity {
 
     private void cadastrarMedico(Medico medico) {
         try{
-            databaseReference = ConfiguracaoFirebase.getDatabaseReference().child("medicos");
-            databaseReference.child(auth.getCurrentUser().getUid()).push().setValue(medico);
+            databaseReference = ConfiguracaoFirebase.getDatabaseReference().child("unidades");
+            databaseReference.child(auth.getCurrentUser().getUid()).child("medicos").child(String.valueOf(medico.getCRM())).setValue(medico);
             Toast.makeText(AdicionarMedicoActivity.this, "Médico cadastrado com sucesso", Toast.LENGTH_SHORT).show();
             finish();
         } catch (Exception ex){
