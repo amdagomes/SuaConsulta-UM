@@ -25,4 +25,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void carregarConsultas(View view){
+        Intent intent = new Intent(MainActivity.this, ConsultasActivity.class);
+        startActivity(intent);
+    }
+
+    public void carregarMedicos(View view){
+        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+        startActivity(intent);
+    }
+
 }

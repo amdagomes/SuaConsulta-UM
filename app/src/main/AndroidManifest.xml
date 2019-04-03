@@ -23,8 +23,20 @@
         <activity
             android:name=".activity.ContaActivity"
             android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.EditarInformacoesActivity"
-            android:parentActivityName=".activity.ContaActivity"/>
+        <activity
+            android:name=".activity.EditarInformacoesActivity"
+            android:parentActivityName=".activity.ContaActivity" />
+        <activity
+            android:name=".activity.ConsultasActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.AdicionaConsultaActivity"
+            android:parentActivityName=".activity.ConsultasActivity" />
+        <activity
+            android:name=".activity.MedicosActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.AdicionarMedicoActivity"
+            android:parentActivityName=".activity.MedicosActivity"/>
     </application>
 
 </manifest>
