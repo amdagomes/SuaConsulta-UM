@@ -47,6 +47,26 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CRM: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textConsultaCrm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/textAgendarData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
