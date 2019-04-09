@@ -1,24 +1,25 @@
 package com.ifpb.suaconsulta_um.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Consulta {
-    private String id;
+public class Consulta implements Serializable {
+    private String uid;
     private String data;
     private int numVagas;
-    private int vagasPreenchidas;
+    private int vagasRestantes;
     private String medico;
     private String unidadeMedica;
 
-    public Consulta() {
+    public Consulta(){
     }
 
-    public String getId() {
-        return id;
+    public String getUid() {
+        return uid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getData() {
@@ -37,12 +38,12 @@ public class Consulta {
         this.numVagas = numVagas;
     }
 
-    public int getVagasPreenchidas() {
-        return vagasPreenchidas;
+    public int getVagasRestantes() {
+        return vagasRestantes;
     }
 
-    public void setVagasPreenchidas(int vagasPreenchidas) {
-        this.vagasPreenchidas = vagasPreenchidas;
+    public void setVagasRestantes(int vagasRestantes) {
+        this.vagasRestantes = vagasRestantes;
     }
 
     public String getMedico() {
@@ -67,8 +68,8 @@ public class Consulta {
         if (o == null || getClass() != o.getClass()) return false;
         Consulta consulta = (Consulta) o;
         return numVagas == consulta.numVagas &&
-                vagasPreenchidas == consulta.vagasPreenchidas &&
-                Objects.equals(id, consulta.id) &&
+                vagasRestantes == consulta.vagasRestantes &&
+                Objects.equals(uid, consulta.uid) &&
                 Objects.equals(data, consulta.data) &&
                 Objects.equals(medico, consulta.medico) &&
                 Objects.equals(unidadeMedica, consulta.unidadeMedica);
@@ -77,16 +78,16 @@ public class Consulta {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, data, numVagas, vagasPreenchidas, medico, unidadeMedica);
+        return Objects.hash(uid, data, numVagas, vagasRestantes, medico, unidadeMedica);
     }
 
     @Override
     public String toString() {
         return "Consulta{" +
-                "id='" + id + '\'' +
+                "uid='" + uid + '\'' +
                 ", data='" + data + '\'' +
                 ", numVagas=" + numVagas +
-                ", vagasPreenchidas=" + vagasPreenchidas +
+                ", vagasRestantes=" + vagasRestantes +
                 ", medico='" + medico + '\'' +
                 ", unidadeMedica='" + unidadeMedica + '\'' +
                 '}';

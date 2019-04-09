@@ -84,9 +84,11 @@ public class AdicionaConsultaActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 consulta.setData(data.getText().toString());
                 consulta.setNumVagas(Integer.parseInt(vagas.getText().toString()));
+                consulta.setVagasRestantes(Integer.parseInt(vagas.getText().toString()));
                 consulta.setUnidadeMedica(auth.getCurrentUser().getUid());
                 try{
                     referenceConsulta.child(auth.getCurrentUser().getUid()).push().setValue(consulta);
+//                    referenceConsulta.push().setValue(consulta);
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(AdicionaConsultaActivity.this, "Consulta cadastrada", Toast.LENGTH_SHORT).show();
                     finish();

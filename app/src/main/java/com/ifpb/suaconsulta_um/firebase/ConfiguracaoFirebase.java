@@ -26,11 +26,4 @@ public class ConfiguracaoFirebase {
         return firebaseAuth;
     }
 
-    public static StorageReference getStorageReference(){
-        if (storageReference == null){
-            storageReference = FirebaseStorage.getInstance().getReference();
-        }
-        return storageReference;
-    }
-
 }

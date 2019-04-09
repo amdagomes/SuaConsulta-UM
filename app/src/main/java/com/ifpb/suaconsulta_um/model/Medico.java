@@ -1,8 +1,9 @@
 package com.ifpb.suaconsulta_um.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Medico {
+public class Medico implements Serializable {
     private String id;
     private String nome;
     private int CRM;

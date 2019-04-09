@@ -46,8 +46,7 @@ public class ConsultasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         auth = ConfiguracaoFirebase.getFirebaseAuth();
-        databaseReference = ConfiguracaoFirebase.getDatabaseReference().child("consultas")
-                .child(auth.getCurrentUser().getUid()).getParent();
+        databaseReference = ConfiguracaoFirebase.getDatabaseReference().child("consultas").child(auth.getCurrentUser().getUid()).getParent();
 
         consultas = new ArrayList<>();
 
@@ -65,17 +64,21 @@ public class ConsultasActivity extends AppCompatActivity {
         eventListener = databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
                 for (DataSnapshot data : dataSnapshot.getChildren()){
+                    Log.i("VERIFICANDO", data.getRef().toString());
                     Consulta consulta = data.getValue(Consulta.class);
-                    consultas.add(consulta);
-                    Log.i("LISTACONSULTAS", consulta.toString());
-                    adapter.notifyDataSetChanged();
+                    consulta.setUid(data.getKey());
+                    if (consulta.getUnidadeMedica().equals(auth.getCurrentUser().getUid())){
+                        consultas.add(consulta);
+                    }
                 }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                recuperaConsultas();
             }
 
             @Override

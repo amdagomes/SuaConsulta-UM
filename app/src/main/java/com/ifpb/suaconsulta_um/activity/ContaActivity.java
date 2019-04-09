@@ -58,9 +58,9 @@ public class ContaActivity extends AppCompatActivity {
             case R.id.itemEditar:
                 startActivity(new Intent(ContaActivity.this, EditarInformacoesActivity.class));
                 break;
-            case R.id.itemAlterarSenha:
-                //ação
-                break;
+//            case R.id.itemAlterarSenha:
+//                //ação
+//                break;
             case R.id.itemSair:
                 logout();
                 break;

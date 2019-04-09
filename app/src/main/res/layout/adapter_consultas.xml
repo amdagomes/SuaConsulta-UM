@@ -105,11 +105,11 @@
                     android:id="@+id/textAgendarVagas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vagas preenchidas:"
+                    android:text="Vagas restantantes:"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textConsultaPreenchidas"
+                    android:id="@+id/textConsultaRestantes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -118,6 +118,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

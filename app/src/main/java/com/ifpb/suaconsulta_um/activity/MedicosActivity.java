@@ -86,7 +86,12 @@ public class MedicosActivity extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                for(DataSnapshot data : dataSnapshot.getChildren()){
+                    Medico medico = data.getValue(Medico.class);
+                    Log.i("MEDICOS", medico.toString());
+                    medicos.add(medico);
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override

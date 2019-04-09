@@ -30,7 +30,7 @@ public class AdicionarMedicoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adiconar_medico);
 
-        Toolbar toolbar = findViewById(R.id.toolbarAdcMedico);
+        Toolbar toolbar = findViewById(R.id.toolbarEditarMedico);
         toolbar.setTitle("Cadastrar Médico");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

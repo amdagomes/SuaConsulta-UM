@@ -35,8 +35,12 @@
         <activity
             android:name=".activity.MedicosActivity"
             android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.AdicionarMedicoActivity"
-            android:parentActivityName=".activity.MedicosActivity"/>
+        <activity
+            android:name=".activity.AdicionarMedicoActivity"
+            android:parentActivityName=".activity.MedicosActivity" />
+        <activity
+            android:name=".activity.EditarMedicoActivity"
+            android:parentActivityName=".activity.MedicosActivity" />
     </application>
 
 </manifest>

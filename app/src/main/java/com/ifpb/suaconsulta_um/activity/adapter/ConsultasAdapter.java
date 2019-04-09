@@ -7,10 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,18 +47,20 @@ public class ConsultasAdapter extends RecyclerView.Adapter<ConsultasAdapter.MyVi
         Consulta consulta = consultas.get(i);
         myViewHolder.data.setText(consulta.getData());
         myViewHolder.totalVagas.setText(String.valueOf(consulta.getNumVagas()));
-        myViewHolder.vagasPreenchidas.setText(String.valueOf(consulta.getVagasPreenchidas()));
+        myViewHolder.vagasRestantes.setText(String.valueOf(consulta.getVagasRestantes()));
 
         String unidade = consulta.getUnidadeMedica();
         String crm = consulta.getMedico();
-        Log.i("LISTACONSULTAS", "crm: " + crm + ", uniade: " + unidade);
+
         reference.child(unidade).child("medicos").child(crm).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Medico medico = dataSnapshot.getValue(Medico.class);
 //                Log.i("LISTACONSULTAS", medico.toString());
-                myViewHolder.medico.setText(medico.getNome());
-                myViewHolder.crm.setText(String.valueOf(medico.getCRM()));
+               if (medico != null){
+                   myViewHolder.medico.setText(medico.getNome());
+                   myViewHolder.crm.setText(String.valueOf(medico.getCRM()));
+               }
             }
 
             @Override
@@ -77,7 +77,7 @@ public class ConsultasAdapter extends RecyclerView.Adapter<ConsultasAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView medico, data, totalVagas, vagasPreenchidas, crm;
+        TextView medico, data, totalVagas, vagasRestantes, crm;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -85,7 +85,7 @@ public class ConsultasAdapter extends RecyclerView.Adapter<ConsultasAdapter.MyVi
             medico = itemView.findViewById(R.id.textConsultaMedico);
             data = itemView.findViewById(R.id.textConsultaData);
             totalVagas = itemView.findViewById(R.id.textConsultaTotal);
-            vagasPreenchidas = itemView.findViewById(R.id.textConsultaPreenchidas);
+            vagasRestantes = itemView.findViewById(R.id.textConsultaRestantes);
             crm = itemView.findViewById(R.id.textConsultaCrm);
         }
     }
